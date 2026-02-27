@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | InstantHost</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body class="dashboard-page">
+    <header class="sticky-header">
+        <div class="container">
+            <div class="logo"><a href="/" style="text-decoration:none;color:inherit;">InstantHost</a></div>
+            <nav>
+                <button id="logout" class="btn-secondary">Log Out</button>
+                <button id="theme-toggle" class="theme-toggle">🌙</button>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="dashboard-header">
+            <h1>My Sites</h1>
+            <div class="api-key-section">
+                <span>API Key: </span>
+                <code id="api-key-display">••••••••••••••••</code>
+                <button id="copy-api-key" class="btn-icon">📋</button>
+            </div>
+        </div>
+
+        <div class="dashboard-grid">
+            <aside class="sidebar">
+                <h3>Projects</h3>
+                <ul id="project-list">
+                    <li class="active">All Sites</li>
+                    <!-- Projects will be injected here -->
+                </ul>
+                <button id="new-project" class="btn-text">+ New Project</button>
+            </aside>
+
+            <div class="sites-section">
+                <div id="sites-list" class="sites-list">
+                    <!-- Sites will be injected here -->
+                    <div class="loading">Loading your sites...</div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div id="toast" class="toast hidden"></div>
+
+    <script src="dashboard.js"></script>
+</body>
+
+</html>

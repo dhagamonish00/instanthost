@@ -1,0 +1,7 @@
+node_modules/
+.env
+.instanthost/
+*.log
+install_log.txt
+dist/
+.vercel/

@@ -1,0 +1,89 @@
+{
+    "name": "InstantHost Publish Example",
+    "nodes": [
+        {
+            "parameters": {
+                "httpMethod": "POST",
+                "path": "publish-site",
+                "options": {}
+            },
+            "name": "Webhook",
+            "type": "n8n-nodes-base.webhook",
+            "typeVersion": 1,
+            "position": [
+                250,
+                300
+            ],
+            "id": "1"
+        },
+        {
+            "parameters": {
+                "values": {
+                    "string": [
+                        {
+                            "name": "html",
+                            "value": "<html><body><h1>Published from n8n!</h1><p>Data: {{ $node[\"Webhook\"].json[\"body\"] }}</p></body></html>"
+                        }
+                    ]
+                },
+                "options": {}
+            },
+            "name": "Set HTML",
+            "type": "n8n-nodes-base.set",
+            "typeVersion": 1,
+            "position": [
+                450,
+                300
+            ],
+            "id": "2"
+        },
+        {
+            "parameters": {
+                "method": "POST",
+                "url": "https://instanthost.site/api/v1/publish",
+                "sendBody": true,
+                "bodyParameters": {
+                    "parameters": [
+                        {
+                            "name": "files",
+                            "value": "=[{\"path\": \"index.html\", \"size\": {{ $node[\"Set HTML\"].json[\"html\"].length }}, \"contentType\": \"text/html\"}]"
+                        }
+                    ]
+                },
+                "options": {}
+            },
+            "name": "Create Publish",
+            "type": "n8n-nodes-base.httpRequest",
+            "typeVersion": 4,
+            "position": [
+                650,
+                300
+            ],
+            "id": "3"
+        }
+    ],
+    "connections": {
+        "Webhook": {
+            "main": [
+                [
+                    {
+                        "node": "Set HTML",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Set HTML": {
+            "main": [
+                [
+                    {
+                        "node": "Create Publish",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        }
+    }
+}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In | InstantHost</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="auth-page">
+    <div class="auth-card">
+        <h1>Sign In</h1>
+        <p>Enter your email to receive a magic link.</p>
+        <form id="login-form">
+            <input type="email" id="email" placeholder="email@example.com" required>
+            <button type="submit" class="btn-primary">Send Magic Link</button>
+        </form>
+        <div id="status-message" class="hidden"></div>
+    </div>
+    <script>
+        document.getElementById('login-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const email = document.getElementById('email').value;
+            const res = await fetch('/api/auth/login', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email })
+            });
+            const data = await res.json();
+            const status = document.getElementById('status-message');
+            status.textContent = data.message || data.error;
+            status.classList.remove('hidden');
+        });
+    </script>
+</body>
+
+</html>

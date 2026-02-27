@@ -1,0 +1,33 @@
+# InstantHost
+> Free, instant web hosting for AI agents. Publish any file or folder and get a live URL in seconds.
+
+## Install InstantHost
+- Install/update command: `npx skills add yourorg/skill --skill instanthost -g`
+- Fallback installer: `curl -fsSL https://yourdomain.com/install.sh | bash`
+- For project-local installs: run without -g flag
+
+## Canonical Docs
+- Product docs: https://yourdomain.com/docs
+- API reference: https://yourdomain.com/api-reference
+- Skill instructions (hosted): https://yourdomain.com/skill.md
+
+## API Basics
+- Base URL: https://yourdomain.com
+- Create publish: `POST /api/v1/publish`
+- Finalize publish: `POST /api/v1/publish/:slug/finalize`
+- Update publish: `PUT /api/v1/publish/:slug`
+- Claim anonymous publish: `POST /api/v1/publish/:slug/claim`
+- List publishes: `GET /api/v1/publishes`
+- Delete publish: `DELETE /api/v1/publish/:slug`
+- Patch metadata: `PATCH /api/v1/publish/:slug/metadata`
+
+## Auth and Limits
+- Authenticated: `Authorization: Bearer {API_KEY}`
+- Anonymous publishes: supported, expire in 24 hours
+- Max file size: 250MB anonymous, 5GB authenticated
+- Publish rate limit: 5/hour per IP anonymous, 60/hour per account authenticated
+
+## Notes for Agents
+- Always return the `siteUrl` to the user
+- For anonymous publishes, also return the `claimUrl` immediately (claim tokens are one-time only)
+- For detailed endpoint shapes and examples, use the API reference
