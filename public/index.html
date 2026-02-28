@@ -4,193 +4,341 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>InstantHost | Free, instant web hosting for AI agents</title>
+    <title>InstantHost | Static hosting for AI agents</title>
     <meta name="description"
         content="Publish any file or folder to the web instantly with InstantHost. No account needed. Live URLs in seconds.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <!-- No external fonts or icons needed for authentic Win98 -->
+    <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 
 <body>
 
-    <div class="desktop-container">
+    <header>
+        <div class="container">
+            <div class="logo">
+                <i data-lucide="cloud-lightning" stroke-width="2.5" color="#2563eb"></i>
+                InstantHost
+            </div>
+            <nav>
+                <a href="#features">Features</a>
+                <a href="#integrations">Integrations</a>
+                <a href="/docs">Documentation</a>
+            </nav>
+            <div class="header-actions">
+                <a href="/login.html" class="btn btn-secondary" style="padding: 8px 16px;">Sign In</a>
+            </div>
+        </div>
+    </header>
 
-        <!-- Main Application Window -->
-        <div class="window" id="main-window">
-            <div class="title-bar">
-                <div class="title-bar-text">
-                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
-                        width="16" height="16" alt="icon" style="background: white; border:1px solid #c0c0c0;">
-                    InstantHost - Network Service
+    <main>
+        <section class="hero">
+            <div class="container">
+                <div class="badge">v2.0 is now live</div>
+                <h1>Think, plan, and host<br>all in one place.</h1>
+                <p>The fastest way for your AI agents to publish static websites, documents, and dashboards to the live
+                    web. No deployment configuration required.</p>
+
+                <div class="btn-group">
+                    <button class="btn btn-primary" id="try-now">
+                        Start Publishing Free
+                        <i data-lucide="arrow-right" size="18"></i>
+                    </button>
+                    <button class="btn btn-secondary" id="copy-setup">
+                        <i data-lucide="terminal" size="18"></i>
+                        Copy Agent Instructions
+                    </button>
                 </div>
-                <div class="title-bar-controls">
-                    <button aria-label="Minimize">0</button>
-                    <button aria-label="Maximize">1</button>
-                    <button aria-label="Close">r</button>
+
+                <div class="hero-graphic">
+                    <div class="hero-graphic-inner">
+                        <div class="mockup-header">
+                            <div class="mockup-dot" style="background-color: #f87171;"></div>
+                            <div class="mockup-dot" style="background-color: #fbbf24;"></div>
+                            <div class="mockup-dot" style="background-color: #34d399;"></div>
+                        </div>
+                        <div class="mockup-body">
+                            <div class="code-snippet">
+                                <span class="keyword">curl</span> -X POST https://api.instanthost.site/publish \<br>
+                                &nbsp;&nbsp;-H <span class="string">"Content-Type: application/json"</span> \<br>
+                                &nbsp;&nbsp;-d <span class="string">'{<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;"files": [<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ "path": "index.html", "content":
+                                    "&lt;h1&gt;Hello World&lt;/h1&gt;" }<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;]<br>
+                                    &nbsp;&nbsp;}'</span><br><br>
+                                <span style="color: #94a3b8;">// Output:</span><br>
+                                <span class="string">"url": "https://shiny-fox-82.instanthost.site"</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
+        </section>
 
-            <div class="window-body">
-                <nav
-                    style="display: flex; gap: 10px; margin-bottom: 10px; border-bottom: 2px groove #dfdfdf; padding-bottom: 5px;">
-                    <a href="/docs"><u>F</u>ile</a>
-                    <a href="/docs"><u>E</u>dit</a>
-                    <a href="/docs"><u>V</u>iew</a>
-                    <a href="/docs"><u>H</u>elp</a>
-                </nav>
-
-                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
-                    <div></div>
-                    <div style="display:flex; gap: 5px;">
-                        <a href="/login.html" class="btn-signin">Auth.exe</a>
-                        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle colors">Options</button>
-                    </div>
+        <section id="features" class="features">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Keep everything in one place.</h2>
+                    <p>Designed specifically for autonomous agents to share output instantly, seamlessly blending into
+                        your workflow.</p>
                 </div>
 
-                <section class="hero">
-                    <marquee scrollamount="5" width="100%">
-                        *** WELCOME TO INSTANTHOST: FREE, INSTANT WEB HOSTING FOR AGENTS ***
-                    </marquee>
-
-                    <div class="steps">
-                        <div class="step">
-                            <div class="step-num">Step 1.</div>
-                            <p>Just tell your agent to publish to <strong>instanthost.site</strong></p>
+                <div class="bento-grid">
+                    <div class="bento-card large">
+                        <div class="icon-wrapper">
+                            <i data-lucide="zap"></i>
                         </div>
-                        <div class="step">
-                            <div class="step-num">Step 2.</div>
-                            <p>It's online at <strong>url.instanthost.site</strong>, no account needed.</p>
+                        <h3>Zero Configuration</h3>
+                        <p>No git repositories, no build steps, no Vercel config files. Just send raw HTML/CSS/JS files
+                            via a simple HTTP POST request and get a live URL back in milliseconds.</p>
+                    </div>
+                    <div class="bento-card">
+                        <div class="icon-wrapper">
+                            <i data-lucide="globe"></i>
                         </div>
+                        <h3>Global Edge CDN</h3>
+                        <p>Sites are instantly deployed to global edge nodes, ensuring lightning-fast load times for
+                            your users anywhere in the world.</p>
                     </div>
+                    <div class="bento-card">
+                        <div class="icon-wrapper">
+                            <i data-lucide="timer-reset"></i>
+                        </div>
+                        <h3>Ephemeral by Default</h3>
+                        <p>Anonymous publishing means links expire in 24 hours. Perfect for temporary AI artifacts.
+                            Claim them with an account to keep them forever.</p>
+                    </div>
+                    <div class="bento-card large">
+                        <div class="icon-wrapper">
+                            <i data-lucide="code-2"></i>
+                        </div>
+                        <h3>Programmatic Access</h3>
+                        <p>Built API-first. Native drop-in scripts for Bash, Node.js, and Python. Seamlessly integrate
+                            into n8n workflows, GitHub Actions, or local automation scripts.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-                    <div class="hero-actions">
-                        <button class="btn-primary" id="try-now">Execute Publish.bat</button>
-                        <div class="secondary-label">WORKS WITH EVERY AGENT</div>
-                        <a href="https://demo.instanthost.site" class="live-demo-link" target="_blank">Launch Live
-                            demo</a>
-                    </div>
-                </section>
+        <section id="integrations" class="integrations">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Works with your favorite agents.</h2>
+                    <p>If it can make an HTTP request, it can host on InstantHost.</p>
+                </div>
+                <div class="integration-grid">
+                    <div class="integration-item"><i data-lucide="bot"></i> Claude 3.5 Sonnet</div>
+                    <div class="integration-item"><i data-lucide="sparkles"></i> GPT-4o</div>
+                    <div class="integration-item"><i data-lucide="terminal-square"></i> Cursor</div>
+                    <div class="integration-item"><i data-lucide="workflow"></i> n8n Workflows</div>
+                    <div class="integration-item"><i data-lucide="coffee"></i> Google Apps Script</div>
+                    <div class="integration-item"><i data-lucide="code"></i> Local Bash Scripts</div>
+                </div>
+            </div>
+        </section>
 
-                <section class="setup-section window">
-                    <div class="title-bar">
-                        <div class="title-bar-text">Connection Setup</div>
-                    </div>
-                    <div class="window-body">
-                        <button id="copy-setup" class="btn-copy-setup" style="margin-bottom: 10px;">
-                            <span id="copy-text">Copy setup instructions to Clipboard</span>
-                            <span id="copied-text" class="hidden">Copied to Clipboard.</span>
+        <section class="faq">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Frequently asked questions</h2>
+                </div>
+                <div class="accordion">
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            What exactly can I publish?
+                            <i data-lucide="chevron-down"></i>
                         </button>
-                        <div class="sunken-panel">
-                            Supported Protocols:<br>
-                            Claude.exe | GPT-4.dll | Cursor.sys | n8n.app | Codex.bin | OpenClaw.bat
+                        <div class="accordion-content">
+                            <p>InstantHost is for static files only. You can publish HTML, CSS, JavaScript, images,
+                                PDFs, CSVs, and anything else the browser can render natively. It is perfect for
+                                AI-generated dashboards, prototypes, reports, and marketing pages.</p>
                         </div>
                     </div>
-                </section>
-
-                <section class="faq window">
-                    <div class="title-bar">
-                        <div class="title-bar-text">Help Topics (FAQ)</div>
-                    </div>
-                    <div class="window-body">
-                        <div class="accordion sunken-panel" style="background:#fff; color:#000;">
-                            <div class="accordion-item">
-                                <button class="accordion-header">What should I publish?</button>
-                                <div class="accordion-content">
-                                    <p>Anything you are creating with your agent and need a URL for: documents,
-                                        websites,
-                                        dashboards, tools, school work, visualizations, presentations, prototypes,
-                                        games,
-                                        articles, galleries, personal sites, media files, etc.</p>
-                                </div>
-                            </div>
-                            <div class="accordion-item">
-                                <button class="accordion-header">What should I NOT publish?</button>
-                                <div class="accordion-content">
-                                    <p>Anything that needs a backend. This service serves static files only (HTML, CSS,
-                                        JS,
-                                        images, PDFs, videos). If your project needs a database, server-side processing,
-                                        or
-                                        long-running compute, use a full hosting platform.</p>
-                                </div>
-                            </div>
-                            <div class="accordion-item">
-                                <button class="accordion-header">How long does content stay online?</button>
-                                <div class="accordion-content">
-                                    <p>24 hours without an account. Your agent gives you a claim code.</p>
-                                </div>
-                            </div>
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            Can I host a backend or database here?
+                            <i data-lucide="chevron-down"></i>
+                        </button>
+                        <div class="accordion-content">
+                            <p>No. If your project requires server-side processing (like PHP, Node.js endpoints, or
+                                Python Flask) or a database, you need a full-stack hosting provider like Vercel, Heroku,
+                                or Render.</p>
                         </div>
                     </div>
-                </section>
-
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            Do I need to create an account?
+                            <i data-lucide="chevron-down"></i>
+                        </button>
+                        <div class="accordion-content">
+                            <p>No account is required to start publishing. By default, anonymous publications are
+                                ephemeral and will be deleted after 24 hours. You can create a free account to claim
+                                your temporary sites and keep them online permanently.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
+        </section>
+    </main>
 
-            <div class="status-bar">
-                <div class="status-bar-field">Ready</div>
-                <div class="status-bar-field" style="max-width: 150px;">TCP/IP Network</div>
-                <div class="status-bar-field" style="max-width: 100px;">1996-2026</div>
+    <footer>
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <i data-lucide="cloud-lightning" stroke-width="2.5" color="#2563eb"></i>
+                        InstantHost
+                    </div>
+                    <p>The developer platform for autonomous agents to share their output with the world.</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-group">
+                        <h4>Product</h4>
+                        <a href="#features">Features</a>
+                        <a href="#integrations">Integrations</a>
+                        <a href="/pricing">Pricing</a>
+                    </div>
+                    <div class="footer-group">
+                        <h4>Resources</h4>
+                        <a href="/docs">Documentation</a>
+                        <a href="/llms.txt">llms.txt</a>
+                        <a href="/status">System Status</a>
+                    </div>
+                    <div class="footer-group">
+                        <h4>Legal</h4>
+                        <a href="/privacy">Privacy Policy</a>
+                        <a href="/terms">Terms of Service</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 InstantHost Inc. All rights reserved.</p>
+                <div class="socials">
+                    <a href="#"><i data-lucide="twitter" size="20"></i></a>
+                    <a href="#"><i data-lucide="github" size="20"></i></a>
+                </div>
             </div>
         </div>
+    </footer>
 
-    </div>
-
-    <!-- The classic Taskbar -->
-    <div class="taskbar">
-        <button class="start-button">
-            <!-- Simulated classic Windows flag -->
-            <div style="display:flex; flex-wrap:wrap; width:16px; height:16px;">
-                <div style="width:8px; height:8px; background:red;"></div>
-                <div style="width:8px; height:8px; background:green;"></div>
-                <div style="width:8px; height:8px; background:blue;"></div>
-                <div style="width:8px; height:8px; background:yellow;"></div>
-            </div>
-            Start
-        </button>
-        <div class="taskbar-items">
-            <div class="taskbar-item active">InstantHost - ...</div>
-        </div>
-    </div>
-
-
-    <!-- Onboarding Modal (Improvement 7) -->
+    <!-- Onboarding Modal -->
     <div id="onboarding-modal" class="modal hidden">
-        <div class="window modal-content">
-            <div class="title-bar">
-                <div class="title-bar-text">Setup Wizard</div>
-                <div class="title-bar-controls">
-                    <button class="close-modal" aria-label="Close">r</button>
+        <div class="modal-content">
+            <button class="close-modal"><i data-lucide="x"></i></button>
+
+            <div id="modal-step-1">
+                <h3>Agent Setup Wizard</h3>
+                <p>Choose the environment your agent is operating in.</p>
+                <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-top: 16px;">
+                    <button class="btn btn-secondary env-btn" data-env="bash">Bash</button>
+                    <button class="btn btn-secondary env-btn" data-env="python">Python</button>
+                    <button class="btn btn-secondary env-btn" data-env="node">Node.js</button>
                 </div>
             </div>
-            <div class="window-body">
-                <div id="modal-step-1">
-                    <p style="margin-bottom:10px;">Step 1: Choose your environment</p>
-                    <div class="env-options sunken-panel">
-                        <button class="env-btn" data-env="bash">Bash</button>
-                        <button class="env-btn" data-env="python">Python</button>
-                        <button class="env-btn" data-env="node">Node.js</button>
-                        <button class="env-btn" data-env="n8n">n8n</button>
-                        <button class="env-btn" data-env="gas">Google Script</button>
-                    </div>
-                </div>
-                <div id="modal-step-2" class="hidden">
-                    <p style="margin-bottom:10px;">Step 2: Copy your snippet</p>
-                    <pre class="sunken-panel" id="snippet-code"><code></code></pre>
-                    <button class="btn-primary" id="copy-snippet">Copy Selection</button>
-                </div>
-                <div id="modal-step-3" class="hidden">
-                    <p style="margin-bottom:10px;">Step 3: Paste and Publish</p>
-                    <p class="sunken-panel">Paste the snippet into your agent's instructions or workflow and you're
-                        ready to go!</p>
-                    <button class="btn-primary" id="finish-onboarding" style="display:block; margin: 0 auto;">Finish
-                        Setup</button>
-                </div>
+
+            <div id="modal-step-2" class="hidden">
+                <h3>Copy your Snippet</h3>
+                <p>Provide this to your agent in its system prompt or instructions.</p>
+                <pre style="background: var(--bg-main); padding: 16px; border-radius: 8px; border: 1px solid var(--border); margin: 16px 0; overflow-x: auto; font-family: var(--font-mono); font-size: 14px;"
+                    id="snippet-code"><code></code></pre>
+                <button class="btn btn-primary" style="width: 100%;" id="copy-snippet">Copy to Clipboard</button>
+            </div>
+
+            <div id="modal-step-3" class="hidden">
+                <h3>Ready to Go!</h3>
+                <p style="margin-top: 16px;">Paste the snippet into your agent's instructions. It will now automatically
+                    deploy its output to InstantHost.</p>
+                <button class="btn btn-primary" style="width: 100%; margin-top: 24px;"
+                    id="finish-onboarding">Done</button>
             </div>
         </div>
     </div>
 
-    <div id="toast" class="toast hidden"></div>
+    <!-- Toast Notification -->
+    <div id="toast" class="modal hidden"
+        style="align-items: flex-end; justify-content: flex-end; padding: 24px; background: none; backdrop-filter: none; pointer-events: none;">
+        <div
+            style="background: var(--text-main); color: white; padding: 12px 24px; border-radius: var(--radius-sm); box-shadow: var(--shadow-lg); display: flex; align-items: center; gap: 8px;">
+            <i data-lucide="check-circle" size="18" style="color: #34d399;"></i>
+            <span id="toast-message">Action completed.</span>
+        </div>
+    </div>
 
-    <script src="script.js"></script>
+    <script>
+        // Basic interactivity for the new HTML structure
+        document.addEventListener('DOMContentLoaded', () => {
+            lucide.createIcons();
+
+            // Accordion
+            document.querySelectorAll('.accordion-header').forEach(button => {
+                button.addEventListener('click', () => {
+                    const item = button.parentElement;
+                    const isActive = item.classList.contains('active');
+
+                    document.querySelectorAll('.accordion-item').forEach(i => i.classList.remove('active'));
+                    document.querySelectorAll('.accordion-header i').forEach(i => i.setAttribute('data-lucide', 'chevron-down'));
+
+                    if (!isActive) {
+                        item.classList.add('active');
+                        button.querySelector('i').setAttribute('data-lucide', 'chevron-up');
+                    }
+                    lucide.createIcons();
+                });
+            });
+
+            // Modal logic (Simplified integration with script.js)
+            const modal = document.getElementById('onboarding-modal');
+            const copyBtn = document.getElementById('copy-setup');
+            const closeBtn = document.querySelector('.close-modal');
+            const toast = document.getElementById('toast');
+
+            if (copyBtn) {
+                copyBtn.addEventListener('click', () => {
+                    modal.classList.remove('hidden');
+                    document.getElementById('modal-step-1').classList.remove('hidden');
+                    document.getElementById('modal-step-2').classList.add('hidden');
+                    document.getElementById('modal-step-3').classList.add('hidden');
+                });
+            }
+
+            if (closeBtn) {
+                closeBtn.addEventListener('click', () => {
+                    modal.classList.add('hidden');
+                });
+            }
+
+            // Mock env selection
+            document.querySelectorAll('.env-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    document.getElementById('modal-step-1').classList.add('hidden');
+                    document.getElementById('modal-step-2').classList.remove('hidden');
+                    document.getElementById('snippet-code').innerText = `You are an agent. To publish files, use this bash command: curl -X POST https://api.instanthost.site/publish...`;
+                });
+            });
+
+            const submitBtn = document.getElementById('copy-snippet');
+            if (submitBtn) {
+                submitBtn.addEventListener('click', () => {
+                    document.getElementById('modal-step-2').classList.add('hidden');
+                    document.getElementById('modal-step-3').classList.remove('hidden');
+
+                    toast.classList.remove('hidden');
+                    document.getElementById('toast-message').innerText = "Snippet copied to clipboard!";
+                    setTimeout(() => toast.classList.add('hidden'), 3000);
+                });
+            }
+
+            const finishBtn = document.getElementById('finish-onboarding');
+            if (finishBtn) {
+                finishBtn.addEventListener('click', () => modal.classList.add('hidden'));
+            }
+        });
+    </script>
 </body>
 
 </html>
