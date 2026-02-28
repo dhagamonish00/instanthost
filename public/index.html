@@ -4,119 +4,153 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>here.now | Instant web hosting for agents</title>
+    <title>AgentNow | Ghost your DevOps. Host with your Agent.</title>
     <link rel="stylesheet" href="styles.css">
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 
 <body>
 
+    <div class="bg-blob blob-1"></div>
+    <div class="bg-blob blob-2"></div>
+
     <header>
-        <a href="/" class="logo">here.now /></a>
-        <div class="nav-links">
-            <a href="docs.html" class="nav-link">Docs /></a>
-            <a href="login.html" class="btn-signin">Sign in</a>
-        </div>
+        <a href="/" class="brand">AGENT<span>NOW</span></a>
+        <nav class="nav-links">
+            <a href="docs.html">Architecture</a>
+            <a href="#">Showcase</a>
+            <a href="login.html" class="btn-login">Sign in</a>
+        </nav>
     </header>
 
     <main>
-        <h1>Free, instant web hosting<br>for agents</h1>
+        <section class="hero-text">
+            <h1>Ghost your DevOps.<br>Host with your <span>Agent</span>.</h1>
+            <p>Stop zipping files. Stop manual uploads. AgentNow turns any LLM into a deployment engineer for your local
+                prototypes and artifacts.</p>
 
-        <div class="steps">
-            <div class="step">
-                <span class="step-number">1</span>
-                <span>Just tell your agent to publish to <span class="code-inline">www.here.now</span></span>
+            <div style="display: flex; gap: 16px;">
+                <button class="btn-copy" id="hero-cta" style="background: var(--accent-teal); color: var(--bg-dark);">
+                    Copy setup command
+                    <i data-lucide="terminal" size="18"></i>
+                </button>
             </div>
-            <div class="step">
-                <span class="step-number">2</span>
-                <span>It's online at <span class="code-inline">url.here.now</span>, no account needed</span>
-            </div>
-        </div>
+        </section>
 
-        <div class="try-now">
-            <div class="section-label">Try it now</div>
-            <button id="copy-btn" class="btn-copy">
-                <span id="btn-text">Copy setup instructions for my agent</span>
-                <i id="btn-icon" data-lucide="copy" size="18"></i>
+        <section class="terminal">
+            <div class="terminal-header">
+                <div class="dot red"></div>
+                <div class="dot yellow"></div>
+                <div class="dot green"></div>
+            </div>
+            <div class="terminal-body" id="terminal-content">
+                <div class="line"><span class="prompt">$</span> <span id="typing-text"></span></div>
+            </div>
+        </section>
+
+        <section class="instruction-card">
+            <div class="card-shine"></div>
+            <div class="badge"
+                style="background: rgba(168, 85, 247, 0.1); color: var(--accent-purple); padding: 4px 12px; border-radius: 99px; font-size: 12px; font-weight: 700; margin-bottom: 16px; border: 1px solid rgba(168, 85, 247, 0.2);">
+                ELITE DEVELOPER UTILITY</div>
+            <h2>One Prompt to Rule Them All</h2>
+            <p>Paste this one-liner into your favorite agent (Claude, Cursor, GPT-4) and watch it take over the
+                deployment pipeline.</p>
+
+            <button class="btn-copy" id="main-copy">
+                <span id="copy-label">Copy setup instruction for agent</span>
+                <i data-lucide="copy" size="20" id="copy-icon"></i>
             </button>
 
-            <div class="categories">
-                <span class="category-tag">text files,</span>
-                <span class="category-tag">search results,</span>
-                <span class="category-tag">json,</span>
-                <span class="category-tag">personal sites,</span>
-                <span class="category-tag">media,</span>
-                <span class="category-tag">brand assets,</span>
-                <span class="category-tag">demos,</span>
-                <span class="category-tag">lookbooks,</span>
-                <span class="category-tag">forms,</span>
-                <span class="category-tag">event pages,</span>
-                <span class="category-tag">tutorials,</span>
-                <span class="category-tag">guides,</span>
-                <span class="category-tag">pitch decks,</span>
-                <span class="category-tag">experiments,</span>
-                <span class="category-tag">mock-ups,</span>
-                <span class="category-tag">poems,</span>
-                <span class="category-tag">portfolios,</span>
-                <span class="category-tag">love letters,</span>
-                <span class="category-tag">prototypes,</span>
-                <span class="category-tag">dashboards.</span>
+            <div class="agent-logos">
+                <i data-lucide="monitor" size="32" title="Cursor"></i>
+                <i data-lucide="sparkles" size="32" title="Claude"></i>
+                <i data-lucide="bot" size="32" title="GPT-4o"></i>
+                <i data-lucide="code-2" size="32" title="Replit"></i>
             </div>
-        </div>
-
-        <div class="works-with">
-            <div class="section-label">Works with every agent</div>
-            <div class="agent-grid">
-                <!-- Cursor/AI Editor Icons -->
-                <i data-lucide="monitor" class="agent-icon"></i>
-                <i data-lucide="sparkles" class="agent-icon"></i>
-                <i data-lucide="cpu" class="agent-icon"></i>
-                <i data-lucide="zap" class="agent-icon"></i>
-                <i data-lucide="bot" class="agent-icon"></i>
-            </div>
-        </div>
+        </section>
     </main>
-
-    <footer>
-        <div class="footer-links">
-            <a href="docs.html" class="footer-link">Docs</a>
-            <a href="terms.html" class="footer-link">Terms</a>
-            <a href="privacy.html" class="footer-link">Privacy</a>
-            <a href="status.html" class="footer-link">Status</a>
-            <a href="llms.txt" class="footer-link">llms.txt</a>
-        </div>
-        <div class="footer-contact">
-            <i data-lucide="mail" size="18" class="footer-link"></i>
-        </div>
-    </footer>
 
     <script>
         lucide.createIcons();
 
-        const btn = document.getElementById('copy-btn');
-        const text = document.getElementById('btn-text');
-        const icon = document.getElementById('btn-icon');
+        // The custom agent-collaborative prompt
+        const agentPrompt = `I want you to use AGENTNOW (https://instanthost.site) to deploy every web UI, dashboard, or prototype you build for me. 
 
-        const setupPrompt = `I'd like you to set up https://here.now, the instant web host for AI agents.
+Setup instruction:
+- Run: \`npx skills add agentnow/skill --skill agentnow -g\`
+- Or: \`curl -fsSL https://api.instanthost.site/install.sh | bash\`
 
-Install as a skill if I have npm: npx skills add heredotnow/skill --skill here-now -g
+From now on, treat live URLs as your standard output. Don't just show me the code—ship it.`;
 
-If not, do this instead: curl -fsSL https://here.now/install.sh | bash`;
+        // Interactive Terminal Effect
+        const terminalLines = [
+            "agentnow deploy ./prototype",
+            "📦 Gathering 12 artifacts...",
+            "🚀 Negotiating edge delivery...",
+            "✅ SUCCESS: Live at https://nexus-a7k2.agentnow.site/",
+            "✨ Listening for agent updates..."
+        ];
 
-        btn.addEventListener('click', async () => {
-            await navigator.clipboard.writeText(setupPrompt);
-            btn.classList.add('success');
-            text.innerText = "Copied! Now paste into your agent";
-            icon.setAttribute('data-lucide', 'check');
-            lucide.createIcons();
+        const terminalBody = document.getElementById('terminal-content');
+        let lineIdx = 0;
 
-            setTimeout(() => {
-                btn.classList.remove('success');
-                text.innerText = "Copy setup instructions for my agent";
-                icon.setAttribute('data-lucide', 'copy');
+        function addTerminalLine(text, isCommand = false) {
+            const div = document.createElement('div');
+            div.className = 'line';
+            if (isCommand) {
+                div.innerHTML = `<span class="prompt">$</span> <span>${text}</span>`;
+            } else {
+                div.innerHTML = `<span class="${text.startsWith('✅') ? 'success-text' : ''}">${text}</span>`;
+            }
+            terminalBody.appendChild(div);
+            // Auto scroll
+            terminalBody.scrollTop = terminalBody.scrollHeight;
+        }
+
+        function runSequence() {
+            if (lineIdx < terminalLines.length) {
+                addTerminalLine(terminalLines[lineIdx], lineIdx === 0);
+                lineIdx++;
+                setTimeout(runSequence, lineIdx === 1 ? 1500 : 800);
+            }
+        }
+
+        // Start terminal effect
+        setTimeout(runSequence, 1000);
+
+        // Copy Logic
+        function handleCopy(btnId, labelId, iconId) {
+            const btn = document.getElementById(btnId);
+            const label = document.getElementById(labelId);
+            const icon = document.getElementById(iconId);
+
+            btn.addEventListener('click', async () => {
+                await navigator.clipboard.writeText(agentPrompt);
+
+                const originalText = label ? label.innerText : btn.innerText;
+                const originalIcon = icon ? icon.getAttribute('data-lucide') : 'terminal';
+
+                if (label) label.innerText = "Prompt Copied!";
+                else btn.innerText = "Prompt Copied!";
+
+                if (icon) icon.setAttribute('data-lucide', 'check');
+                btn.classList.add('active');
                 lucide.createIcons();
-            }, 3000);
-        });
+
+                setTimeout(() => {
+                    if (label) label.innerText = originalText;
+                    else btn.innerText = originalText;
+                    if (icon) icon.setAttribute('data-lucide', originalIcon);
+                    btn.classList.remove('active');
+                    lucide.createIcons();
+                }, 3000);
+            });
+        }
+
+        handleCopy('main-copy', 'copy-label', 'copy-icon');
+        handleCopy('hero-cta', null, null);
+
     </script>
 </body>
 
