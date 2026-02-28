@@ -8,182 +8,182 @@
     <meta name="description"
         content="Publish any file or folder to the web instantly with InstantHost. No account needed. Live URLs in seconds.">
     <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
-        rel="stylesheet">
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- No external fonts or icons needed for authentic Win98 -->
 </head>
 
 <body>
-    <header class="sticky-header">
-        <div class="container">
-            <div class="logo"><i data-lucide="terminal"></i> InstantHost</div>
-            <nav>
-                <a href="/docs">Docs</a>
-                <a href="/login.html" class="btn-signin">Sign In</a>
-                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle colors">
-                    <i data-lucide="monitor"></i>
-                </button>
-            </nav>
-        </div>
-    </header>
 
-    <main>
-        <section class="hero">
-            <div class="container">
-                <marquee scrollamount="8" width="80%">
-                    <h1>Free, instant web hosting for agents!!!</h1>
-                </marquee>
-                <div class="steps fade-in-delayed">
-                    <div class="step">
-                        <div class="step-num">1</div>
-                        <p>Just tell your agent to publish to <strong>instanthost.site</strong></p>
-                    </div>
-                    <div class="circle-divider"></div>
-                    <div class="step">
-                        <div class="step-num">2</div>
-                        <p>It's online at <strong>url.instanthost.site</strong>, no account needed.</p>
-                    </div>
+    <div class="desktop-container">
+
+        <!-- Main Application Window -->
+        <div class="window" id="main-window">
+            <div class="title-bar">
+                <div class="title-bar-text">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+                        width="16" height="16" alt="icon" style="background: white; border:1px solid #c0c0c0;">
+                    InstantHost - Network Service
                 </div>
-                <div class="hero-actions fade-in-delayed">
-                    <button class="btn-primary" id="try-now"><i data-lucide="zap"></i> TRY IT NOW</button>
-                    <p class="secondary-label">WORKS WITH EVERY AGENT</p>
-                    <a href="https://demo.instanthost.site" class="live-demo-link" target="_blank">Live demo <i
-                            data-lucide="external-link"></i></a>
+                <div class="title-bar-controls">
+                    <button aria-label="Minimize">0</button>
+                    <button aria-label="Maximize">1</button>
+                    <button aria-label="Close">r</button>
                 </div>
             </div>
-        </section>
 
-        <section class="setup-section">
-            <div class="container">
-                <button id="copy-setup" class="btn-copy-setup">
-                    <span id="copy-text"><i data-lucide="copy"></i> Copy setup instructions for my agent</span>
-                    <span id="copied-text" class="hidden"><i data-lucide="check"></i> Copied! Now paste into your
-                        agent</span>
-                </button>
-                <div class="agent-logos">
-                    <span>Claude</span>
-                    <span>GPT-4</span>
-                    <span>Cursor</span>
-                    <span>n8n</span>
-                    <span>Codex</span>
-                    <span>OpenClaw</span>
-                </div>
-            </div>
-        </section>
+            <div class="window-body">
+                <nav
+                    style="display: flex; gap: 10px; margin-bottom: 10px; border-bottom: 2px groove #dfdfdf; padding-bottom: 5px;">
+                    <a href="/docs"><u>F</u>ile</a>
+                    <a href="/docs"><u>E</u>dit</a>
+                    <a href="/docs"><u>V</u>iew</a>
+                    <a href="/docs"><u>H</u>elp</a>
+                </nav>
 
-        <section class="faq">
-            <div class="container">
-                <h2>FAQ</h2>
-                <div class="accordion">
-                    <div class="accordion-item">
-                        <button class="accordion-header">What should I publish?</button>
-                        <div class="accordion-content">
-                            <p>Anything you are creating with your agent and need a URL for: documents, websites,
-                                dashboards, tools, school work, visualizations, presentations, prototypes, games,
-                                articles, galleries, personal sites, media files, etc.</p>
-                        </div>
-                    </div>
-                    <div class="accordion-item">
-                        <button class="accordion-header">What should I NOT publish?</button>
-                        <div class="accordion-content">
-                            <p>Anything that needs a backend. This service serves static files only (HTML, CSS, JS,
-                                images, PDFs, videos). If your project needs a database, server-side processing, or
-                                long-running compute, use a full hosting platform.</p>
-                        </div>
-                    </div>
-                    <div class="accordion-item">
-                        <button class="accordion-header">What agents/tools does this work with?</button>
-                        <div class="accordion-content">
-                            <p>All of them. Any AI agent that can make HTTP requests can publish here. Claude, GPT,
-                                Cursor, Codex, n8n, or anything else.</p>
-                        </div>
-                    </div>
-                    <div class="accordion-item">
-                        <button class="accordion-header">How long does content stay online without an account?</button>
-                        <div class="accordion-content">
-                            <p>24 hours. Your agent gives you a claim code. After that, unclaimed sites expire.</p>
-                        </div>
-                    </div>
-                    <div class="accordion-item">
-                        <button class="accordion-header">Are accounts free?</button>
-                        <div class="accordion-content">
-                            <p>Yes.</p>
-                        </div>
-                    </div>
-                    <div class="accordion-item">
-                        <button class="accordion-header">How do you make money?</button>
-                        <div class="accordion-content">
-                            <p>Premium features like custom domains, analytics, team workspaces, and higher limits.</p>
-                        </div>
-                    </div>
-                    <div class="accordion-item">
-                        <button class="accordion-header">Can I publish as many things as I want?</button>
-                        <div class="accordion-content">
-                            <p>Yes. Everything you publish gets its own URL, unless you tell your agent to update an
-                                existing one.</p>
-                        </div>
-                    </div>
-                    <div class="accordion-item">
-                        <button class="accordion-header">Why is this so fast?</button>
-                        <div class="accordion-content">
-                            <p>Files are stored on a global CDN and served from the edge location nearest to each
-                                visitor.</p>
-                        </div>
-                    </div>
-                    <div class="accordion-item">
-                        <button class="accordion-header">Can I host anything?</button>
-                        <div class="accordion-content">
-                            <p>No. Illegal content, malware, phishing, spam, and content that exploits minors is
-                                prohibited.</p>
-                        </div>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+                    <div></div>
+                    <div style="display:flex; gap: 5px;">
+                        <a href="/login.html" class="btn-signin">Auth.exe</a>
+                        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle colors">Options</button>
                     </div>
                 </div>
-            </div>
-        </section>
-    </main>
 
-    <footer>
-        <div class="container">
-            <hr>
-            <p>&copy; 1996-2026 InstantHost Inc. All rights reserved.</p>
-            <p><small>Best viewed in Netscape Navigator</small></p>
-            <div class="footer-links">
-                <a href="/docs">[Docs]</a>
-                <a href="/terms">[Terms]</a>
-                <a href="/privacy">[Privacy]</a>
-                <a href="/status">[Status]</a>
-                <a href="/llms.txt">[llms.txt]</a>
-                <a href="https://twitter.com/instanthost" target="_blank" class="x-link"><i
-                        data-lucide="twitter"></i></a>
+                <section class="hero">
+                    <marquee scrollamount="5" width="100%">
+                        *** WELCOME TO INSTANTHOST: FREE, INSTANT WEB HOSTING FOR AGENTS ***
+                    </marquee>
+
+                    <div class="steps">
+                        <div class="step">
+                            <div class="step-num">Step 1.</div>
+                            <p>Just tell your agent to publish to <strong>instanthost.site</strong></p>
+                        </div>
+                        <div class="step">
+                            <div class="step-num">Step 2.</div>
+                            <p>It's online at <strong>url.instanthost.site</strong>, no account needed.</p>
+                        </div>
+                    </div>
+
+                    <div class="hero-actions">
+                        <button class="btn-primary" id="try-now">Execute Publish.bat</button>
+                        <div class="secondary-label">WORKS WITH EVERY AGENT</div>
+                        <a href="https://demo.instanthost.site" class="live-demo-link" target="_blank">Launch Live
+                            demo</a>
+                    </div>
+                </section>
+
+                <section class="setup-section window">
+                    <div class="title-bar">
+                        <div class="title-bar-text">Connection Setup</div>
+                    </div>
+                    <div class="window-body">
+                        <button id="copy-setup" class="btn-copy-setup" style="margin-bottom: 10px;">
+                            <span id="copy-text">Copy setup instructions to Clipboard</span>
+                            <span id="copied-text" class="hidden">Copied to Clipboard.</span>
+                        </button>
+                        <div class="sunken-panel">
+                            Supported Protocols:<br>
+                            Claude.exe | GPT-4.dll | Cursor.sys | n8n.app | Codex.bin | OpenClaw.bat
+                        </div>
+                    </div>
+                </section>
+
+                <section class="faq window">
+                    <div class="title-bar">
+                        <div class="title-bar-text">Help Topics (FAQ)</div>
+                    </div>
+                    <div class="window-body">
+                        <div class="accordion sunken-panel" style="background:#fff; color:#000;">
+                            <div class="accordion-item">
+                                <button class="accordion-header">What should I publish?</button>
+                                <div class="accordion-content">
+                                    <p>Anything you are creating with your agent and need a URL for: documents,
+                                        websites,
+                                        dashboards, tools, school work, visualizations, presentations, prototypes,
+                                        games,
+                                        articles, galleries, personal sites, media files, etc.</p>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <button class="accordion-header">What should I NOT publish?</button>
+                                <div class="accordion-content">
+                                    <p>Anything that needs a backend. This service serves static files only (HTML, CSS,
+                                        JS,
+                                        images, PDFs, videos). If your project needs a database, server-side processing,
+                                        or
+                                        long-running compute, use a full hosting platform.</p>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <button class="accordion-header">How long does content stay online?</button>
+                                <div class="accordion-content">
+                                    <p>24 hours without an account. Your agent gives you a claim code.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+
+            <div class="status-bar">
+                <div class="status-bar-field">Ready</div>
+                <div class="status-bar-field" style="max-width: 150px;">TCP/IP Network</div>
+                <div class="status-bar-field" style="max-width: 100px;">1996-2026</div>
             </div>
         </div>
-    </footer>
+
+    </div>
+
+    <!-- The classic Taskbar -->
+    <div class="taskbar">
+        <button class="start-button">
+            <!-- Simulated classic Windows flag -->
+            <div style="display:flex; flex-wrap:wrap; width:16px; height:16px;">
+                <div style="width:8px; height:8px; background:red;"></div>
+                <div style="width:8px; height:8px; background:green;"></div>
+                <div style="width:8px; height:8px; background:blue;"></div>
+                <div style="width:8px; height:8px; background:yellow;"></div>
+            </div>
+            Start
+        </button>
+        <div class="taskbar-items">
+            <div class="taskbar-item active">InstantHost - ...</div>
+        </div>
+    </div>
+
 
     <!-- Onboarding Modal (Improvement 7) -->
     <div id="onboarding-modal" class="modal hidden">
-        <div class="modal-content">
-            <button class="close-modal">&times;</button>
-            <div id="modal-step-1">
-                <h3>Step 1: Choose your environment</h3>
-                <div class="env-options">
-                    <button class="env-btn" data-env="bash">Bash</button>
-                    <button class="env-btn" data-env="python">Python</button>
-                    <button class="env-btn" data-env="node">Node.js</button>
-                    <button class="env-btn" data-env="n8n">n8n</button>
-                    <button class="env-btn" data-env="gas">Google Script</button>
+        <div class="window modal-content">
+            <div class="title-bar">
+                <div class="title-bar-text">Setup Wizard</div>
+                <div class="title-bar-controls">
+                    <button class="close-modal" aria-label="Close">r</button>
                 </div>
             </div>
-            <div id="modal-step-2" class="hidden">
-                <h3>Step 2: Copy your snippet</h3>
-                <pre id="snippet-code"><code></code></pre>
-                <button class="btn-primary" id="copy-snippet">Copy Snippet</button>
-            </div>
-            <div id="modal-step-3" class="hidden">
-                <h3>Step 3: Paste and Publish</h3>
-                <p>Paste the snippet into your agent's instructions or workflow and you're ready to go!</p>
-                <button class="btn-primary" id="finish-onboarding">Finish</button>
+            <div class="window-body">
+                <div id="modal-step-1">
+                    <p style="margin-bottom:10px;">Step 1: Choose your environment</p>
+                    <div class="env-options sunken-panel">
+                        <button class="env-btn" data-env="bash">Bash</button>
+                        <button class="env-btn" data-env="python">Python</button>
+                        <button class="env-btn" data-env="node">Node.js</button>
+                        <button class="env-btn" data-env="n8n">n8n</button>
+                        <button class="env-btn" data-env="gas">Google Script</button>
+                    </div>
+                </div>
+                <div id="modal-step-2" class="hidden">
+                    <p style="margin-bottom:10px;">Step 2: Copy your snippet</p>
+                    <pre class="sunken-panel" id="snippet-code"><code></code></pre>
+                    <button class="btn-primary" id="copy-snippet">Copy Selection</button>
+                </div>
+                <div id="modal-step-3" class="hidden">
+                    <p style="margin-bottom:10px;">Step 3: Paste and Publish</p>
+                    <p class="sunken-panel">Paste the snippet into your agent's instructions or workflow and you're
+                        ready to go!</p>
+                    <button class="btn-primary" id="finish-onboarding" style="display:block; margin: 0 auto;">Finish
+                        Setup</button>
+                </div>
             </div>
         </div>
     </div>
@@ -191,9 +191,6 @@
     <div id="toast" class="toast hidden"></div>
 
     <script src="script.js"></script>
-    <script>
-        lucide.createIcons();
-    </script>
 </body>
 
 </html>
