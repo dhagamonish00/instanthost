@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>beam.host | Ghost your DevOps. Host with your Agent.</title>
+    <title>emmdee.host | Ghost your DevOps. Host with your Agent.</title>
     <link rel="stylesheet" href="styles.css">
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
@@ -15,7 +15,7 @@
     <div class="bg-blob blob-2"></div>
 
     <header>
-        <a href="/" class="brand">BEAM<span>.HOST</span></a>
+        <a href="/" class="brand">EMMDEE<span>.HOST</span></a>
         <nav class="nav-links">
             <a href="docs.html">Architecture</a>
             <a href="#">Showcase</a>
@@ -25,15 +25,21 @@
 
     <main>
         <section class="hero-text">
-            <h1>Ghost your DevOps.<br>Host with your <span>Beam</span>.</h1>
-            <p>Stop zipping files. Stop manual uploads. Beam turns any LLM into a deployment engineer for your local
+            <h1>Ghost your DevOps.<br>Host with your <span>Emmdee</span>.</h1>
+            <p>Stop zipping files. Stop manual uploads. Emmdee turns any LLM into a deployment engineer for your local
                 prototypes and artifacts.</p>
 
-            <div style="display: flex; gap: 16px;">
+            <div style="display: flex; gap: 16px; flex-wrap: wrap;">
                 <button class="btn-copy" id="hero-cta" style="background: var(--accent-teal); color: var(--bg-dark);">
-                    Copy setup command
+                    npx emmdee deploy
                     <i data-lucide="terminal" size="18"></i>
                 </button>
+                <button class="btn-copy" id="hero-curl"
+                    style="background: transparent; border: 1px solid var(--border-dim); color: var(--text-bright);">
+                    curl emmdee.host/install.sh
+                    <i data-lucide="download" size="18"></i>
+                </button>
+            </div>
             </div>
         </section>
 
@@ -75,20 +81,20 @@
         lucide.createIcons();
 
         // The custom agent-collaborative prompt
-        const agentPrompt = `I want you to use BEAM.HOST (https://beam.host) to deploy every web UI, dashboard, or prototype you build for me. 
+        const agentPrompt = `I want you to use EMMDEE.HOST (https://emmdee.host) to deploy every web UI, dashboard, or prototype you build for me. 
 
 Setup instruction:
-- Run: \`npx skills add beamhost/skill --skill beam -g\`
-- Or: \`curl -fsSL https://beam.host/install.sh | bash\`
+- Run: \`npx skills add emmdee/skill --skill emmdee -g\`
+- Or: \`curl -fsSL https://emmdee.host/install.sh | bash\`
 
 From now on, treat live URLs as your standard output. Don't just show me the code—ship it.`;
 
         // Interactive Terminal Effect
         const terminalLines = [
-            "beam deploy ./prototype",
+            "emmdee deploy ./prototype",
             "📦 Gathering 12 artifacts...",
             "🚀 Negotiating edge delivery...",
-            "✅ SUCCESS: Live at https://nexus-a7k2.beam.host/",
+            "✅ SUCCESS: Live at https://nexus-a7k2.emmdee.host/",
             "✨ Listening for agent updates..."
         ];
 
@@ -120,19 +126,20 @@ From now on, treat live URLs as your standard output. Don't just show me the cod
         setTimeout(runSequence, 1000);
 
         // Copy Logic
-        function handleCopy(btnId, labelId, iconId) {
+        function handleCopy(btnId, textToCopy, labelId, iconId) {
             const btn = document.getElementById(btnId);
-            const label = document.getElementById(labelId);
-            const icon = document.getElementById(iconId);
+            if (!btn) return;
+            const label = labelId ? document.getElementById(labelId) : null;
+            const icon = iconId ? document.getElementById(iconId) : btn.querySelector('i');
 
             btn.addEventListener('click', async () => {
-                await navigator.clipboard.writeText(agentPrompt);
+                await navigator.clipboard.writeText(textToCopy);
 
-                const originalText = label ? label.innerText : btn.innerText;
+                const originalText = label ? label.innerText : btn.childNodes[0].textContent;
                 const originalIcon = icon ? icon.getAttribute('data-lucide') : 'terminal';
 
-                if (label) label.innerText = "Prompt Copied!";
-                else btn.innerText = "Prompt Copied!";
+                if (label) label.innerText = "Copied!";
+                else btn.childNodes[0].textContent = "Copied! ";
 
                 if (icon) icon.setAttribute('data-lucide', 'check');
                 btn.classList.add('active');
@@ -140,7 +147,7 @@ From now on, treat live URLs as your standard output. Don't just show me the cod
 
                 setTimeout(() => {
                     if (label) label.innerText = originalText;
-                    else btn.innerText = originalText;
+                    else btn.childNodes[0].textContent = originalText;
                     if (icon) icon.setAttribute('data-lucide', originalIcon);
                     btn.classList.remove('active');
                     lucide.createIcons();
@@ -148,8 +155,9 @@ From now on, treat live URLs as your standard output. Don't just show me the cod
             });
         }
 
-        handleCopy('main-copy', 'copy-label', 'copy-icon');
-        handleCopy('hero-cta', null, null);
+        handleCopy('main-copy', agentPrompt, 'copy-label', 'copy-icon');
+        handleCopy('hero-cta', 'npx emmdee deploy', null, null);
+        handleCopy('hero-curl', 'curl -fsSL https://emmdee.host/install.sh | bash', null, null);
 
     </script>
 </body>

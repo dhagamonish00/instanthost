@@ -8,17 +8,17 @@ const os = require('os');
 const { deploy, getProfile } = require('../index');
 
 const program = new Command();
-const CONFIG_PATH = path.join(os.homedir(), '.instanthost', 'config.json');
+const CONFIG_PATH = path.join(os.homedir(), '.emmdee', 'config.json');
 
 program
-    .name('instanthost')
-    .description('CLI for InstantHost - Instant static hosting for agents')
+    .name('emmdee')
+    .description('CLI for Emmdee - Instant static hosting for agents')
     .version('1.0.0');
 
 program
     .command('login')
     .description('Login with your API key')
-    .argument('<key>', 'Your InstantHost API key')
+    .argument('<key>', 'Your Emmdee API key')
     .action(async (key) => {
         try {
             await fs.ensureDir(path.dirname(CONFIG_PATH));
@@ -43,7 +43,7 @@ program
 
 program
     .command('deploy')
-    .description('Deploy a folder or file to InstantHost')
+    .description('Deploy a folder or file to Emmdee')
     .argument('[path]', 'Path to the folder or file to deploy', '.')
     .option('-s, --slug <slug>', 'Update an existing site with this slug')
     .option('-t, --title <title>', 'Site title')

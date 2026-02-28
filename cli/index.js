@@ -4,7 +4,7 @@ const path = require('path');
 const ora = require('ora');
 const mime = require('mime-types');
 
-const BASE_URL = process.env.INSTANTHOST_API_BASE || 'https://instanthost.site';
+const BASE_URL = process.env.EMMDEE_API_BASE || 'https://emmdee.host';
 
 async function deploy(targetPath, options = {}) {
     const { apiKey, slug, title, description } = options;

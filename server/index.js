@@ -29,7 +29,7 @@ app.use((req, res, next) => {
 
     // If we have a subdomain (e.g., slug.yourdomain.com)
     // Assuming yourdomain.com is 2 parts, or whatever is configured in BASE_URL
-    const baseUrlParts = (process.env.BASE_URL || 'localhost').split('.');
+    const baseUrlParts = (process.env.BASE_URL || 'emmdee.host').split('.');
 
     if (parts.length > baseUrlParts.length) {
         const slug = parts[0];
@@ -79,7 +79,7 @@ app.post('/api/cron/cleanup', (req, res) => {
 
 // Catch-all for frontend (Marketing page)
 app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, '../client/index.html'));
+    res.sendFile(path.join(__dirname, '../public/index.html'));
 });
 
 // Cron job for expiry cleanup

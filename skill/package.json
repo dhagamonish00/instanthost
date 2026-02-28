@@ -1,7 +1,7 @@
 {
-  "name": "@instanthost/skill",
+  "name": "emmdee-skill",
   "version": "1.0.0",
-  "description": "InstantHost Publish Skill for AI Agents",
+  "description": "Agent skill for Emmdee hosting",
   "main": "scripts/publish.js",
   "bin": {
     "instanthost-publish": "scripts/publish.js"

@@ -6,18 +6,18 @@ import argparse
 import mimetypes
 from concurrent.futures import ThreadPoolExecutor
 
-# InstantHost Publish Script (Python)
+# Emmdee Publish Script (Python)
 # Version: 1.0.0
 
 def main():
-    parser = argparse.ArgumentParser(description="InstantHost Publish Script")
+    parser = argparse.ArgumentParser(description="Emmdee Publish Script")
     parser.add_argument("target", help="File or directory to publish")
     parser.add_argument("--slug", help="Update existing publish")
     parser.add_argument("--claim-token", help="Override claim token")
     parser.add_argument("--title", help="Viewer title")
     parser.add_argument("--description", help="Viewer description")
     parser.add_argument("--ttl", type=int, help="Custom TTL (authenticated only)")
-    parser.add_argument("--base-url", default="https://yourdomain.com", help="API base URL")
+    parser.add_argument("--base-url", default="https://emmdee.host", help="API base URL")
     parser.add_argument("--api-key", help="API key override")
     
     args = parser.parse_args()
@@ -25,9 +25,9 @@ def main():
     # Step 1: Resolve API Key
     api_key = args.api_key
     if not api_key:
-        api_key = os.environ.get("INSTANTHOST_API_KEY")
+        api_key = os.environ.get("EMMDEE_API_KEY")
     if not api_key:
-        creds_path = os.path.expanduser("~/.instanthost/credentials")
+        creds_path = os.path.expanduser("~/.emmdee/credentials")
         if os.path.exists(creds_path):
             with open(creds_path, "r") as f:
                 api_key = f.read().strip()
@@ -125,7 +125,7 @@ def main():
         print("publish_result.auth_mode=authenticated", file=sys.stderr)
 
     # Step 9: Save state
-    state_dir = ".instanthost"
+    state_dir = ".emmdee"
     os.makedirs(state_dir, exist_ok=True)
     state_file = os.path.join(state_dir, "state.json")
     

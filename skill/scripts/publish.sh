@@ -1,12 +1,12 @@
 #!/bin/bash
 
-# InstantHost Publish Script
+# Emmdee Publish Script
 # Version: 1.0.0
 
 set -e
 
 # Default values
-BASE_URL="https://yourdomain.com"
+BASE_URL="https://emmdee.host"
 API_KEY=""
 SLUG=""
 CLAIM_TOKEN=""
@@ -49,10 +49,10 @@ done
 
 # Step 1: Resolve API Key
 if [ -z "$API_KEY" ]; then
-  if [ -n "$INSTANTHOST_API_KEY" ]; then
-    API_KEY="$INSTANTHOST_API_KEY"
-  elif [ -f ~/.instanthost/credentials ]; then
-    API_KEY=$(cat ~/.instanthost/credentials | tr -d '\n\r')
+  if [ -n "$EMMDEE_API_KEY" ]; then
+    API_KEY="$EMMDEE_API_KEY"
+  elif [ -f ~/.emmdee/credentials ]; then
+    API_KEY=$(cat ~/.emmdee/credentials | tr -d '\n\r')
   fi
 fi
 
@@ -169,8 +169,8 @@ else
 fi
 
 # Step 9: Save state
-STATE_FILE=".instanthost/state.json"
-mkdir -p .instanthost
+STATE_FILE=".emmdee/state.json"
+mkdir -p .emmdee
 if [ -f "$STATE_FILE" ]; then
     EXISTING_STATE=$(cat "$STATE_FILE")
 else

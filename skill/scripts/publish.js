@@ -4,13 +4,13 @@ const axios = require('axios');
 const mime = require('mime-types');
 const os = require('os');
 
-// InstantHost Publish Script (Node.js)
+// Emmdee Publish Script (Node.js)
 // Version: 1.0.0
 
 const args = require('minimist')(process.argv.slice(2), {
     string: ['slug', 'claim-token', 'title', 'description', 'base-url', 'api-key'],
     number: ['ttl'],
-    default: { 'base-url': 'https://yourdomain.com' }
+    default: { 'base-url': 'https://emmdee.host' }
 });
 
 async function main() {
@@ -21,9 +21,9 @@ async function main() {
     }
 
     // Step 1: Resolve API Key
-    let apiKey = args['api-key'] || process.env.INSTANTHOST_API_KEY;
+    let apiKey = args['api-key'] || process.env.EMMDEE_API_KEY;
     if (!apiKey) {
-        const creds_path = path.join(os.homedir(), '.instanthost', 'credentials');
+        const creds_path = path.join(os.homedir(), '.emmdee', 'credentials');
         if (fs.existsSync(creds_path)) {
             apiKey = fs.readFileSync(creds_path, 'utf8').trim();
         }
@@ -121,7 +121,7 @@ async function main() {
         }
 
         // Step 9: Save state
-        const stateDir = path.join(process.cwd(), '.instanthost');
+        const stateDir = path.join(process.cwd(), '.emmdee');
         if (!fs.existsSync(stateDir)) fs.mkdirSync(stateDir);
         const stateFile = path.join(stateDir, 'state.json');
         let state = { publishes: {} };

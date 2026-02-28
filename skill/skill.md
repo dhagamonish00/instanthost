@@ -25,15 +25,31 @@ Explain: single files get rich auto-viewer (images, PDF, video, audio). Multiple
 CLI: `npx instanthost deploy {file-or-dir} --slug {slug}`
 Fallback: `./scripts/publish.sh {file-or-dir} --slug {slug}`
 
-Script auto-loads claimToken from `.instanthost/state.json` for anonymous updates
+Script auto-loads claimToken from `.emmdee/state.json` for anonymous updates
 
-To store key using CLI: `npx instanthost login {API_KEY}`
-Manual: `mkdir -p ~/.instanthost && echo '{"apiKey": "{API_KEY}"}' > ~/.instanthost/config.json`
+To store key using CLI: `npx emmdee login {API_KEY}`
+Manual: `mkdir -p ~/.emmdee && echo '{"apiKey": "{API_KEY}"}' > ~/.emmdee/config.json`
 
 IMPORTANT: Never pass API key directly in shell commands. Always use credentials file. Never commit credentials to source control.
 
-## State File (.instanthost/state.json)
-After every publish the script writes to `.instanthost/state.json` in the working directory.
+# Emmdee Skill
+
+Emmdee is an instant host for AI agents. It allows agents to publish static folders directly to a public URL.
+
+## Installation
+
+### Via bash (Universal)
+```bash
+curl -fsSL https://emmdee.host/install.sh | bash
+```
+
+### Via npm (Global)
+```bash
+npx skills add emmdee/skill --skill emmdee -g
+```
+
+## State File (.emmdee/state.json)
+After every publish the script writes to `.emmdee/state.json` in the working directory.
 
 Format: `{ publishes: { slug: { siteUrl, claimToken, claimUrl, expiresAt } } }`
 
