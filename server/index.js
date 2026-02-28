@@ -61,6 +61,8 @@ async function serveStaticPublish(slug, req, res) {
 }
 
 // API Routes
+const kvRoutes = require('./routes/kv');
+app.use('/api/v1/kv', kvRoutes);
 app.use('/api/v1', publishRoutes);
 app.use('/api/auth', authRoutes);
 app.use('/api/sites', siteRoutes);
