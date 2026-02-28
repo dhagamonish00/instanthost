@@ -1,25 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>InstantHost | Free, instant web hosting for AI agents</title>
-    <meta name="description" content="Publish any file or folder to the web instantly with InstantHost. No account needed. Live URLs in seconds.">
+    <meta name="description"
+        content="Publish any file or folder to the web instantly with InstantHost. No account needed. Live URLs in seconds.">
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
 </head>
+
 <body>
     <header class="sticky-header">
         <div class="container">
-            <div class="logo">InstantHost</div>
+            <div class="logo"><i data-lucide="terminal"></i> InstantHost</div>
             <nav>
                 <a href="/docs">Docs</a>
                 <a href="/login.html" class="btn-signin">Sign In</a>
-                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
-                    <span class="sun">☀️</span>
-                    <span class="moon">🌙</span>
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle colors">
+                    <i data-lucide="monitor"></i>
                 </button>
             </nav>
         </div>
@@ -28,7 +32,9 @@
     <main>
         <section class="hero">
             <div class="container">
-                <h1 class="fade-in">Free, instant web hosting for agents.</h1>
+                <marquee scrollamount="8" width="80%">
+                    <h1>Free, instant web hosting for agents!!!</h1>
+                </marquee>
                 <div class="steps fade-in-delayed">
                     <div class="step">
                         <div class="step-num">1</div>
@@ -41,9 +47,10 @@
                     </div>
                 </div>
                 <div class="hero-actions fade-in-delayed">
-                    <button class="btn-primary" id="try-now">TRY IT NOW</button>
+                    <button class="btn-primary" id="try-now"><i data-lucide="zap"></i> TRY IT NOW</button>
                     <p class="secondary-label">WORKS WITH EVERY AGENT</p>
-                    <a href="https://demo.instanthost.site" class="live-demo-link" target="_blank">Live demo ↗</a>
+                    <a href="https://demo.instanthost.site" class="live-demo-link" target="_blank">Live demo <i
+                            data-lucide="external-link"></i></a>
                 </div>
             </div>
         </section>
@@ -51,8 +58,9 @@
         <section class="setup-section">
             <div class="container">
                 <button id="copy-setup" class="btn-copy-setup">
-                    <span id="copy-text">Copy setup instructions for my agent</span>
-                    <span id="copied-text" class="hidden">✓ Copied! Now paste into your agent</span>
+                    <span id="copy-text"><i data-lucide="copy"></i> Copy setup instructions for my agent</span>
+                    <span id="copied-text" class="hidden"><i data-lucide="check"></i> Copied! Now paste into your
+                        agent</span>
                 </button>
                 <div class="agent-logos">
                     <span>Claude</span>
@@ -72,19 +80,24 @@
                     <div class="accordion-item">
                         <button class="accordion-header">What should I publish?</button>
                         <div class="accordion-content">
-                            <p>Anything you are creating with your agent and need a URL for: documents, websites, dashboards, tools, school work, visualizations, presentations, prototypes, games, articles, galleries, personal sites, media files, etc.</p>
+                            <p>Anything you are creating with your agent and need a URL for: documents, websites,
+                                dashboards, tools, school work, visualizations, presentations, prototypes, games,
+                                articles, galleries, personal sites, media files, etc.</p>
                         </div>
                     </div>
                     <div class="accordion-item">
                         <button class="accordion-header">What should I NOT publish?</button>
                         <div class="accordion-content">
-                            <p>Anything that needs a backend. This service serves static files only (HTML, CSS, JS, images, PDFs, videos). If your project needs a database, server-side processing, or long-running compute, use a full hosting platform.</p>
+                            <p>Anything that needs a backend. This service serves static files only (HTML, CSS, JS,
+                                images, PDFs, videos). If your project needs a database, server-side processing, or
+                                long-running compute, use a full hosting platform.</p>
                         </div>
                     </div>
                     <div class="accordion-item">
                         <button class="accordion-header">What agents/tools does this work with?</button>
                         <div class="accordion-content">
-                            <p>All of them. Any AI agent that can make HTTP requests can publish here. Claude, GPT, Cursor, Codex, n8n, or anything else.</p>
+                            <p>All of them. Any AI agent that can make HTTP requests can publish here. Claude, GPT,
+                                Cursor, Codex, n8n, or anything else.</p>
                         </div>
                     </div>
                     <div class="accordion-item">
@@ -108,19 +121,22 @@
                     <div class="accordion-item">
                         <button class="accordion-header">Can I publish as many things as I want?</button>
                         <div class="accordion-content">
-                            <p>Yes. Everything you publish gets its own URL, unless you tell your agent to update an existing one.</p>
+                            <p>Yes. Everything you publish gets its own URL, unless you tell your agent to update an
+                                existing one.</p>
                         </div>
                     </div>
                     <div class="accordion-item">
                         <button class="accordion-header">Why is this so fast?</button>
                         <div class="accordion-content">
-                            <p>Files are stored on a global CDN and served from the edge location nearest to each visitor.</p>
+                            <p>Files are stored on a global CDN and served from the edge location nearest to each
+                                visitor.</p>
                         </div>
                     </div>
                     <div class="accordion-item">
                         <button class="accordion-header">Can I host anything?</button>
                         <div class="accordion-content">
-                            <p>No. Illegal content, malware, phishing, spam, and content that exploits minors is prohibited.</p>
+                            <p>No. Illegal content, malware, phishing, spam, and content that exploits minors is
+                                prohibited.</p>
                         </div>
                     </div>
                 </div>
@@ -130,14 +146,17 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2026 InstantHost</p>
+            <hr>
+            <p>&copy; 1996-2026 InstantHost Inc. All rights reserved.</p>
+            <p><small>Best viewed in Netscape Navigator</small></p>
             <div class="footer-links">
-                <a href="/docs">Docs</a>
-                <a href="/terms">Terms</a>
-                <a href="/privacy">Privacy</a>
-                <a href="/status">Status</a>
-                <a href="/llms.txt">llms.txt</a>
-                <a href="https://twitter.com/instanthost" target="_blank" class="x-link">𝕏</a>
+                <a href="/docs">[Docs]</a>
+                <a href="/terms">[Terms]</a>
+                <a href="/privacy">[Privacy]</a>
+                <a href="/status">[Status]</a>
+                <a href="/llms.txt">[llms.txt]</a>
+                <a href="https://twitter.com/instanthost" target="_blank" class="x-link"><i
+                        data-lucide="twitter"></i></a>
             </div>
         </div>
     </footer>
@@ -172,5 +191,9 @@
     <div id="toast" class="toast hidden"></div>
 
     <script src="script.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
 </body>
+
 </html>
