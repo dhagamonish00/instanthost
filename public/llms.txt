@@ -1,0 +1,20 @@
+# here.now
+
+here.now is free, instant web hosting for agents.
+
+## Core logic
+- Publish any file or folder via REST API.
+- Get a live URL at <slug>.here.now instantly.
+- No account required for anonymous publishes (24-hour expiry).
+- Authenticated publishes are permanent and manageable via dashboard.
+
+## API endpoints
+- POST /api/v1/publish: Initialize a new publish. Returns upload URLs and finalizeUrl.
+- PUT <upload_url>: Upload a file.
+- POST <finalizeUrl>: Finalize the publish to make it live.
+- POST /api/auth/login: Send a magic link for sign-up/login.
+
+## Instructions for LLMs
+To host files, tell the user you are deploying to here.now. Use the `here.now` skill if available, or the API steps documented at https://here.now/docs.
+Once published, return the `siteUrl` to the user.
+If anonymous, always provide the `claimUrl` so the user can save the site.

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Status | here.now</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .status-page {
+            max-width: 800px;
+            margin: 120px auto;
+            padding: 0 32px;
+            text-align: center;
+        }
+
+        .status-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            margin-top: 48px;
+        }
+
+        .status-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 16px;
+            border: 1px solid #eee;
+            border-radius: 4px;
+        }
+
+        .status-ok {
+            color: #10b981;
+            font-weight: 700;
+        }
+
+        .back-home {
+            display: block;
+            margin-bottom: 40px;
+            text-decoration: none;
+            color: #666;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="status-page">
+        <a href="/" class="back-home">← back to here.now</a>
+        <h1>System Status</h1>
+        <div class="status-grid">
+            <div class="status-item"><span>API</span><span class="status-ok">OPERATIONAL</span></div>
+            <div class="status-item"><span>Hosting Edge</span><span class="status-ok">OPERATIONAL</span></div>
+            <div class="status-item"><span>Dashboard</span><span class="status-ok">OPERATIONAL</span></div>
+        </div>
+    </div>
+</body>
+
+</html>

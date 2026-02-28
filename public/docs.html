@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Docs | here.now</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .docs-page {
+            max-width: 800px;
+            margin: 80px auto;
+            padding: 0 32px;
+        }
+
+        h2 {
+            font-size: 24px;
+            margin: 48px 0 16px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 8px;
+        }
+
+        h3 {
+            font-size: 18px;
+            margin: 24px 0 8px;
+        }
+
+        p {
+            margin-bottom: 16px;
+            color: #333;
+        }
+
+        pre {
+            background: #f5f5f5;
+            padding: 16px;
+            border-radius: 4px;
+            overflow-x: auto;
+            margin-bottom: 24px;
+            font-family: monospace;
+            font-size: 14px;
+        }
+
+        ul {
+            margin-bottom: 24px;
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        .back-home {
+            display: block;
+            margin-bottom: 40px;
+            text-decoration: none;
+            color: #666;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="docs-page">
+        <a href="/" class="back-home">← back to here.now</a>
+        <h1>Docs</h1>
+
+        <h2 id="overview">Overview</h2>
+        <p>here.now is free, instant web hosting for agents.</p>
+        <p>Publish any file or folder and get a live URL at <code>&lt;slug&gt;.here.now</code>.</p>
+        <ul>
+            <li>Static hosting only: HTML, CSS, JS, images, PDFs, videos, and other files.</li>
+            <li>No account required for anonymous publishes (24 hour expiry).</li>
+            <li>Use an API key for permanent publishes and higher limits.</li>
+        </ul>
+
+        <h2 id="install-skill">Install here.now</h2>
+        <p>Install the here.now skill so your agent can publish automatically:</p>
+        <pre><code>npx skills add heredotnow/skill --skill here-now -g</code></pre>
+        <p>If that fails, try this fallback installer:</p>
+        <pre><code>curl -fsSL https://here.now/install.sh | bash</code></pre>
+
+        <h2 id="quick-start">Quick start</h2>
+        <p>Publish to the web in three steps. No account needed:</p>
+        <p><strong>1. Create publish</strong></p>
+        <pre><code>curl -sS https://here.now/api/v1/publish \
+  -H "content-type: application/json" \
+  -d '{ "files": [ { "path": "index.html", "size": 1234, "contentType": "text/html" } ] }'</code></pre>
+        <p><strong>2. Upload file</strong></p>
+        <pre><code>curl -X PUT "&lt;upload.url&gt;" \
+  -H "Content-Type: text/html" \
+  --data-binary @index.html</code></pre>
+        <p><strong>3. Finalize</strong></p>
+        <pre><code>curl -sS -X POST "&lt;finalizeUrl&gt;" \
+  -H "content-type: application/json" \
+  -d '{ "versionId": "&lt;versionId&gt;" }'</code></pre>
+
+        <h2 id="auth">Authentication</h2>
+        <p>Two modes:</p>
+        <ul>
+            <li><strong>Authenticated</strong>: include <code>Authorization: Bearer &lt;API_KEY&gt;</code>. Get your key
+                from the dashboard after signing in.</li>
+            <li><strong>Anonymous</strong>: omit the header. Publishes expire in 24 hours with lower limits.</li>
+        </ul>
+
+        <h3 id="auth-signup">Agent-assisted sign-up</h3>
+        <p>Agents can send a magic link on behalf of the user:</p>
+        <pre><code>curl -sS https://here.now/api/auth/login \
+  -H "content-type: application/json" \
+  -d '{"email": "user@example.com"}'</code></pre>
+
+        <h2 id="serving-rules">Serving rules</h2>
+        <ol>
+            <li>If index.html exists at root, serve it.</li>
+            <li>If exactly one file in the entire publish, serve an auto-viewer.</li>
+            <li>If an index.html exists in any subdirectory, serve the first one found.</li>
+            <li>Otherwise, serve an auto-generated directory listing.</li>
+        </ol>
+    </div>
+</body>
+
+</html>

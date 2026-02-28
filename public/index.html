@@ -4,130 +4,118 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>InstantHost | Free, instant web hosting for agents</title>
+    <title>here.now | Instant web hosting for agents</title>
     <link rel="stylesheet" href="styles.css">
-    <!-- Unpkg for Lucide icons used for copy/check marks -->
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 
 <body>
 
     <header>
-        <a href="/" class="logo">instanthost.site</a>
-        <div class="header-right">
-            <a href="/docs" class="header-link">Docs</a>
-            <a href="/login.html" class="btn-signin">Sign in</a>
+        <a href="/" class="logo">here.now /></a>
+        <div class="nav-links">
+            <a href="docs.html" class="nav-link">Docs /></a>
+            <a href="login.html" class="btn-signin">Sign in</a>
         </div>
     </header>
 
     <main>
         <h1>Free, instant web hosting<br>for agents</h1>
 
-        <div class="steps-list">
-            <div class="step-item">
+        <div class="steps">
+            <div class="step">
                 <span class="step-number">1</span>
-                <span>Just tell your agent to publish to <span class="step-code">www.instanthost.site</span></span>
+                <span>Just tell your agent to publish to <span class="code-inline">www.here.now</span></span>
             </div>
-            <div class="step-item">
+            <div class="step">
                 <span class="step-number">2</span>
-                <span>It's online at <span class="step-code">url.instanthost.site</span>, no account needed</span>
+                <span>It's online at <span class="code-inline">url.here.now</span>, no account needed</span>
             </div>
         </div>
 
-        <div class="bottom-sections">
-            <div class="section-block">
-                <div class="section-label">Try it now</div>
-                <button id="copy-btn" class="btn-copy-action">
-                    <span id="copy-text">Copy setup instructions for my agent</span>
-                    <i id="copy-icon" data-lucide="copy" size="18"></i>
-                </button>
-            </div>
+        <div class="try-now">
+            <div class="section-label">Try it now</div>
+            <button id="copy-btn" class="btn-copy">
+                <span id="btn-text">Copy setup instructions for my agent</span>
+                <i id="btn-icon" data-lucide="copy" size="18"></i>
+            </button>
 
-            <div class="section-block">
-                <div class="section-label">Works with every agent</div>
-                <div class="agent-icons">
-                    <!-- Crisp minimalist monochrome SVGs replacing the complex logos -->
-                    <div class="agent-icon">
-                        <!-- Car/Auto icon -->
-                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M5 11l1.5-4.5h11L19 11v6h-1v-2H6v2H5v-6zm3-3l-1 3h10l-1-3H8zm-1.5 5.5a1.5 1.5 0 100-3 1.5 1.5 0 000 3zm11 0a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" />
-                        </svg>
-                    </div>
-                    <div class="agent-icon">
-                        <!-- Spark/Asterisk -->
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                            stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M12 2v20M17 5L7 19M21 12H3M19 19L5 5" />
-                        </svg>
-                    </div>
-                    <div class="agent-icon">
-                        <!-- Custom OpenAI-ish flower/spiral -->
-                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M22.2819 9.8211a5.9847 5.9847 0 0 0-.5157-4.9108 6.0462 6.0462 0 0 0-6.5098-2.9A6.0651 6.0651 0 0 0 4.9807 4.1818a5.9847 5.9847 0 0 0-3.9977 2.9 6.0462 6.0462 0 0 0 .7427 7.0966 5.98 5.98 0 0 0 .511 4.9107 6.051 6.051 0 0 0 6.5146 2.9001A5.9847 5.9847 0 0 0 13.2599 24a6.033 6.033 0 0 0 5.468-3.2201 5.9847 5.9847 0 0 0 3.998-2.9001 6.0462 6.0462 0 0 0-.444-7.0587Zm-2.6627 2.671a4.836 4.836 0 0 1-2.0289 2.508l-5.32 3.078-1.748-3.033 5.32-3.078c.84-.486 1.36-1.386 1.36-2.358v-6.155l3.435-1.996c.266.425.438.918.497 1.444.06.526-.008 1.06-.195 1.564l-1.321 7.03zM10.9999 15.655l-5.32 3.078-1.748-3.033 5.32-3.078a2.7126 2.7126 0 0 1 2.72 0l5.32 3.078-1.748 3.033-4.544-2.61v3.085l-1.748 3.033-1.748-3.033v-3.085a2.7126 2.7126 0 0 1 0-2.72l4.544-2.61-1.748-3.033zm-4.724 3.42l-2.03-2.508c-.486-.84-.52-1.848-.094-2.713l3.078-5.32 3.032 1.749-3.077 5.32a2.7126 2.7126 0 0 1-2.358 1.36H4.221v3.996c.426-.265.918-.437 1.444-.496.526-.06 1.06.008 1.565.195l-7.03 1.321zM5.38 6.012c.486-.84 1.386-1.36 2.358-1.36h6.155l1.996-3.435c-.425-.266-.918-.438-1.444-.497-.526-.06-1.06.008-1.565.195L5.85 2.235l2.03 2.508c-.469-.26-1.002-.387-1.542-.375H1.472l1.748 3.033 4.544-2.61a2.7126 2.7126 0 0 1 2.358-1.36h11.235zm12.343-2.592c.486.84.52 1.848.094 2.713l-3.078 5.32-3.032-1.749 3.077-5.32a2.7126 2.7126 0 0 1 2.358-1.36h6.155v-3.996c-.426.265-.918.437-1.444.496-.526.06-1.06-.008-1.565-.195l7.03-1.321-2.03 2.508a2.7126 2.7126 0 0 1 .436 2.898zM21.1 11.246a4.836 4.836 0 0 1-.51 3.195l-3.078 5.32-3.032-1.749 3.077-5.32c.425-.737.425-1.621 0-2.358l-3.077-5.32 3.032-1.749 3.078 5.32c.416.71.6 1.536.51 2.358z" />
-                        </svg>
-                    </div>
-                    <div class="agent-icon">
-                        <!-- Solid Cube -->
-                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M12 2.2L2.7 7.5v9l9.3 5.3 9.3-5.3v-9L12 2.2zM11 20.3l-7-4v-7.2l7 4v7.2zm1-8.5l-7-4 7-4 7 4-7 4zm1 8.5v-7.2l7-4v7.2l-7 4z" />
-                        </svg>
-                    </div>
-                    <div class="agent-icon">
-                        <!-- Solid Phone/Device -->
-                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M7 2h10a2 2 0 012 2v16a2 2 0 01-2 2H7a2 2 0 01-2-2V4a2 2 0 012-2zm0 2v16h10V4H7z" />
-                        </svg>
-                    </div>
-                </div>
+            <div class="categories">
+                <span class="category-tag">text files,</span>
+                <span class="category-tag">search results,</span>
+                <span class="category-tag">json,</span>
+                <span class="category-tag">personal sites,</span>
+                <span class="category-tag">media,</span>
+                <span class="category-tag">brand assets,</span>
+                <span class="category-tag">demos,</span>
+                <span class="category-tag">lookbooks,</span>
+                <span class="category-tag">forms,</span>
+                <span class="category-tag">event pages,</span>
+                <span class="category-tag">tutorials,</span>
+                <span class="category-tag">guides,</span>
+                <span class="category-tag">pitch decks,</span>
+                <span class="category-tag">experiments,</span>
+                <span class="category-tag">mock-ups,</span>
+                <span class="category-tag">poems,</span>
+                <span class="category-tag">portfolios,</span>
+                <span class="category-tag">love letters,</span>
+                <span class="category-tag">prototypes,</span>
+                <span class="category-tag">dashboards.</span>
             </div>
         </div>
 
+        <div class="works-with">
+            <div class="section-label">Works with every agent</div>
+            <div class="agent-grid">
+                <!-- Cursor/AI Editor Icons -->
+                <i data-lucide="monitor" class="agent-icon"></i>
+                <i data-lucide="sparkles" class="agent-icon"></i>
+                <i data-lucide="cpu" class="agent-icon"></i>
+                <i data-lucide="zap" class="agent-icon"></i>
+                <i data-lucide="bot" class="agent-icon"></i>
+            </div>
+        </div>
     </main>
 
-    <!-- Copy Logic Script -->
+    <footer>
+        <div class="footer-links">
+            <a href="docs.html" class="footer-link">Docs</a>
+            <a href="terms.html" class="footer-link">Terms</a>
+            <a href="privacy.html" class="footer-link">Privacy</a>
+            <a href="status.html" class="footer-link">Status</a>
+            <a href="llms.txt" class="footer-link">llms.txt</a>
+        </div>
+        <div class="footer-contact">
+            <i data-lucide="mail" size="18" class="footer-link"></i>
+        </div>
+    </footer>
+
     <script>
         lucide.createIcons();
 
         const btn = document.getElementById('copy-btn');
-        const icon = document.getElementById('copy-icon');
-        const text = document.getElementById('copy-text');
+        const text = document.getElementById('btn-text');
+        const icon = document.getElementById('btn-icon');
 
-        // Note: as a PM, I upgraded the instruction slightly to point to instanthost
-        // which solves the problem "here.now" solves, but this is the user's specific product.
-        const agentPrompt = `I'd like you to set up https://instanthost.site, the instant web host for AI agents.
+        const setupPrompt = `I'd like you to set up https://here.now, the instant web host for AI agents.
 
-Install as a skill if I have npm: npx skills add instanthost/skill --skill instanthost -g
+Install as a skill if I have npm: npx skills add heredotnow/skill --skill here-now -g
 
-If not, do this instead: curl -fsSL https://api.instanthost.site/install.sh | bash`;
+If not, do this instead: curl -fsSL https://here.now/install.sh | bash`;
 
         btn.addEventListener('click', async () => {
-            try {
-                await navigator.clipboard.writeText(agentPrompt);
+            await navigator.clipboard.writeText(setupPrompt);
+            btn.classList.add('success');
+            text.innerText = "Copied! Now paste into your agent";
+            icon.setAttribute('data-lucide', 'check');
+            lucide.createIcons();
 
-                // Switch to success state
-                btn.classList.add('copied');
-                text.innerText = "Copied! Now paste into your agent";
-                icon.setAttribute('data-lucide', 'check');
-                icon.style.color = '#a3e635'; // The specific green color
+            setTimeout(() => {
+                btn.classList.remove('success');
+                text.innerText = "Copy setup instructions for my agent";
+                icon.setAttribute('data-lucide', 'copy');
                 lucide.createIcons();
-
-                // Reset after 3 seconds
-                setTimeout(() => {
-                    btn.classList.remove('copied');
-                    text.innerText = "Copy setup instructions for my agent";
-                    icon.setAttribute('data-lucide', 'copy');
-                    icon.style.color = ''; // Reset color
-                    lucide.createIcons();
-                }, 3000);
-
-            } catch (err) {
-                console.error('Failed to copy text: ', err);
-                text.innerText = "Failed to copy";
-            }
+            }, 3000);
         });
     </script>
 </body>
