@@ -70,13 +70,15 @@ header {
 
 .brand {
     font-weight: 800;
-    font-size: 20px;
+    font-size: 22px;
+    /* Slightly larger for BEAM.HOST */
     letter-spacing: -0.05em;
     color: var(--text-bright);
     text-decoration: none;
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 4px;
+    /* Tighter gap for the dot */
 }
 
 .brand span {
@@ -136,6 +138,7 @@ main {
 .hero-text h1 span {
     background: linear-gradient(to right, var(--accent-teal), var(--accent-purple));
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AgentNow | Ghost your DevOps. Host with your Agent.</title>
+    <title>beam.host | Ghost your DevOps. Host with your Agent.</title>
     <link rel="stylesheet" href="styles.css">
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
@@ -15,7 +15,7 @@
     <div class="bg-blob blob-2"></div>
 
     <header>
-        <a href="/" class="brand">AGENT<span>NOW</span></a>
+        <a href="/" class="brand">BEAM<span>.HOST</span></a>
         <nav class="nav-links">
             <a href="docs.html">Architecture</a>
             <a href="#">Showcase</a>
@@ -25,8 +25,8 @@
 
     <main>
         <section class="hero-text">
-            <h1>Ghost your DevOps.<br>Host with your <span>Agent</span>.</h1>
-            <p>Stop zipping files. Stop manual uploads. AgentNow turns any LLM into a deployment engineer for your local
+            <h1>Ghost your DevOps.<br>Host with your <span>Beam</span>.</h1>
+            <p>Stop zipping files. Stop manual uploads. Beam turns any LLM into a deployment engineer for your local
                 prototypes and artifacts.</p>
 
             <div style="display: flex; gap: 16px;">
@@ -75,20 +75,20 @@
         lucide.createIcons();
 
         // The custom agent-collaborative prompt
-        const agentPrompt = `I want you to use AGENTNOW (https://instanthost.site) to deploy every web UI, dashboard, or prototype you build for me. 
+        const agentPrompt = `I want you to use BEAM.HOST (https://beam.host) to deploy every web UI, dashboard, or prototype you build for me. 
 
 Setup instruction:
-- Run: \`npx skills add agentnow/skill --skill agentnow -g\`
-- Or: \`curl -fsSL https://api.instanthost.site/install.sh | bash\`
+- Run: \`npx skills add beamhost/skill --skill beam -g\`
+- Or: \`curl -fsSL https://beam.host/install.sh | bash\`
 
 From now on, treat live URLs as your standard output. Don't just show me the code—ship it.`;
 
         // Interactive Terminal Effect
         const terminalLines = [
-            "agentnow deploy ./prototype",
+            "beam deploy ./prototype",
             "📦 Gathering 12 artifacts...",
             "🚀 Negotiating edge delivery...",
-            "✅ SUCCESS: Live at https://nexus-a7k2.agentnow.site/",
+            "✅ SUCCESS: Live at https://nexus-a7k2.beam.host/",
             "✨ Listening for agent updates..."
         ];
 
